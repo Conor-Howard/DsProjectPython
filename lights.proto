@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+service LightService {
+	rpc powerOn(PowerRequest) returns (PowerResponse) {}
+
+	rpc changeColour(ColourRequest) returns (ColourResponse) {}
+}
+
+message PowerRequest {
+	bool state = 1;
+}
+
+message PowerResponse {
+	bool state = 1;
+}
+
+message ColourRequest {
+	string colour = 1;
+}
+
+message ColourResponse {
+	string colour = 1;
+}
