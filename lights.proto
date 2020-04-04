@@ -1,23 +1,21 @@
 syntax = "proto3";
 
+option java_multiple_files = true;
+option java_package = "light";
+option java_outer_classname = "LightServiceImpl";
+
+package light;
+
 service LightService {
-	rpc powerOn(PowerRequest) returns (PowerResponse) {}
+	rpc powerOn(Power) returns (Power) {}
 
-	rpc changeColour(ColourRequest) returns (ColourResponse) {}
+	rpc changeColour(Colour) returns (Colour) {}
 }
 
-message PowerRequest {
+message Power {
 	bool state = 1;
 }
 
-message PowerResponse {
-	bool state = 1;
-}
-
-message ColourRequest {
-	string colour = 1;
-}
-
-message ColourResponse {
+message Colour {
 	string colour = 1;
 }

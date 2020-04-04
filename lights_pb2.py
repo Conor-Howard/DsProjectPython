@@ -15,24 +15,24 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='lights.proto',
-  package='',
+  package='light',
   syntax='proto3',
-  serialized_options=None,
-  serialized_pb=b'\n\x0clights.proto\"\x1d\n\x0cPowerRequest\x12\r\n\x05state\x18\x01 \x01(\x08\"\x1e\n\rPowerResponse\x12\r\n\x05state\x18\x01 \x01(\x08\"\x1f\n\rColourRequest\x12\x0e\n\x06\x63olour\x18\x01 \x01(\t\" \n\x0e\x43olourResponse\x12\x0e\n\x06\x63olour\x18\x01 \x01(\t2m\n\x0cLightService\x12*\n\x07powerOn\x12\r.PowerRequest\x1a\x0e.PowerResponse\"\x00\x12\x31\n\x0c\x63hangeColour\x12\x0e.ColourRequest\x1a\x0f.ColourResponse\"\x00\x62\x06proto3'
+  serialized_options=b'\n\005lightB\020LightServiceImplP\001',
+  serialized_pb=b'\n\x0clights.proto\x12\x05light\"\x16\n\x05Power\x12\r\n\x05state\x18\x01 \x01(\x08\"\x18\n\x06\x43olour\x12\x0e\n\x06\x63olour\x18\x01 \x01(\t2g\n\x0cLightService\x12\'\n\x07powerOn\x12\x0c.light.Power\x1a\x0c.light.Power\"\x00\x12.\n\x0c\x63hangeColour\x12\r.light.Colour\x1a\r.light.Colour\"\x00\x42\x1b\n\x05lightB\x10LightServiceImplP\x01\x62\x06proto3'
 )
 
 
 
 
-_POWERREQUEST = _descriptor.Descriptor(
-  name='PowerRequest',
-  full_name='PowerRequest',
+_POWER = _descriptor.Descriptor(
+  name='Power',
+  full_name='light.Power',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='state', full_name='PowerRequest.state', index=0,
+      name='state', full_name='light.Power.state', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -50,22 +50,22 @@ _POWERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16,
+  serialized_start=23,
   serialized_end=45,
 )
 
 
-_POWERRESPONSE = _descriptor.Descriptor(
-  name='PowerResponse',
-  full_name='PowerResponse',
+_COLOUR = _descriptor.Descriptor(
+  name='Colour',
+  full_name='light.Colour',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='state', full_name='PowerResponse.state', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='colour', full_name='light.Colour.colour', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -82,132 +82,55 @@ _POWERRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=47,
-  serialized_end=77,
+  serialized_end=71,
 )
 
-
-_COLOURREQUEST = _descriptor.Descriptor(
-  name='ColourRequest',
-  full_name='ColourRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='colour', full_name='ColourRequest.colour', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=79,
-  serialized_end=110,
-)
-
-
-_COLOURRESPONSE = _descriptor.Descriptor(
-  name='ColourResponse',
-  full_name='ColourResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='colour', full_name='ColourResponse.colour', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=112,
-  serialized_end=144,
-)
-
-DESCRIPTOR.message_types_by_name['PowerRequest'] = _POWERREQUEST
-DESCRIPTOR.message_types_by_name['PowerResponse'] = _POWERRESPONSE
-DESCRIPTOR.message_types_by_name['ColourRequest'] = _COLOURREQUEST
-DESCRIPTOR.message_types_by_name['ColourResponse'] = _COLOURRESPONSE
+DESCRIPTOR.message_types_by_name['Power'] = _POWER
+DESCRIPTOR.message_types_by_name['Colour'] = _COLOUR
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-PowerRequest = _reflection.GeneratedProtocolMessageType('PowerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _POWERREQUEST,
+Power = _reflection.GeneratedProtocolMessageType('Power', (_message.Message,), {
+  'DESCRIPTOR' : _POWER,
   '__module__' : 'lights_pb2'
-  # @@protoc_insertion_point(class_scope:PowerRequest)
+  # @@protoc_insertion_point(class_scope:light.Power)
   })
-_sym_db.RegisterMessage(PowerRequest)
+_sym_db.RegisterMessage(Power)
 
-PowerResponse = _reflection.GeneratedProtocolMessageType('PowerResponse', (_message.Message,), {
-  'DESCRIPTOR' : _POWERRESPONSE,
+Colour = _reflection.GeneratedProtocolMessageType('Colour', (_message.Message,), {
+  'DESCRIPTOR' : _COLOUR,
   '__module__' : 'lights_pb2'
-  # @@protoc_insertion_point(class_scope:PowerResponse)
+  # @@protoc_insertion_point(class_scope:light.Colour)
   })
-_sym_db.RegisterMessage(PowerResponse)
-
-ColourRequest = _reflection.GeneratedProtocolMessageType('ColourRequest', (_message.Message,), {
-  'DESCRIPTOR' : _COLOURREQUEST,
-  '__module__' : 'lights_pb2'
-  # @@protoc_insertion_point(class_scope:ColourRequest)
-  })
-_sym_db.RegisterMessage(ColourRequest)
-
-ColourResponse = _reflection.GeneratedProtocolMessageType('ColourResponse', (_message.Message,), {
-  'DESCRIPTOR' : _COLOURRESPONSE,
-  '__module__' : 'lights_pb2'
-  # @@protoc_insertion_point(class_scope:ColourResponse)
-  })
-_sym_db.RegisterMessage(ColourResponse)
+_sym_db.RegisterMessage(Colour)
 
 
+DESCRIPTOR._options = None
 
 _LIGHTSERVICE = _descriptor.ServiceDescriptor(
   name='LightService',
-  full_name='LightService',
+  full_name='light.LightService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=146,
-  serialized_end=255,
+  serialized_start=73,
+  serialized_end=176,
   methods=[
   _descriptor.MethodDescriptor(
     name='powerOn',
-    full_name='LightService.powerOn',
+    full_name='light.LightService.powerOn',
     index=0,
     containing_service=None,
-    input_type=_POWERREQUEST,
-    output_type=_POWERRESPONSE,
+    input_type=_POWER,
+    output_type=_POWER,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='changeColour',
-    full_name='LightService.changeColour',
+    full_name='light.LightService.changeColour',
     index=1,
     containing_service=None,
-    input_type=_COLOURREQUEST,
-    output_type=_COLOURRESPONSE,
+    input_type=_COLOUR,
+    output_type=_COLOUR,
     serialized_options=None,
   ),
 ])
